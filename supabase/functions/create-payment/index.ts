@@ -83,12 +83,13 @@ serve(async (req) => {
             },
           ],
           back_urls: {
-            success: "https://localhost:5173/meus-pedidos",
-            failure: "https://localhost:5173/checkout",
-            pending: "https://localhost:5173/meus-pedidos",
+            success: "https://ingressoz.vercel.app/meus-pedidos",
+            failure: "https://ingressoz.vercel.app/checkout",
+            pending: "https://ingressoz.vercel.app/meus-pedidos",
           },
           auto_return: "approved",
           external_reference: booking_id,
+          notification_url: "https://kwfdatubtrmmkdjaivhn.supabase.co/functions/v1/mercadopago-webhook"
         }),
       }
     )
