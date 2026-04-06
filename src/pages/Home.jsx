@@ -48,7 +48,7 @@ export default function Home() {
   const priceBase = isWeekend ? 30 : 20;
   const totalEntrada = (booking.adults * priceBase) + (booking.children * (priceBase / 2));
   const totalKiosks = booking.selectedKiosks.reduce((acc, k) => acc + k.category_price, 0);
-  const totalBBQ = (booking.bbqCount || 0) * 20;
+  const totalBBQ = (booking.bbqCount || 0) * 5;
   const grandTotal = totalEntrada + totalKiosks + totalBBQ;
 
   useEffect(() => {
