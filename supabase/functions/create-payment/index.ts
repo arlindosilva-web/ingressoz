@@ -80,8 +80,13 @@ serve(async (req) => {
               quantity: 1,
               unit_price: price,
               currency_id: "BRL",
-            },
+               // Isso aqui garante que o MP NÃO bloqueie nenhum tipo de pagamento
+              excluded_payment_types: [], 
+              excluded_payment_methods: [],
+              installments: 12, // Permite parcelar no cartão 
+            },           
           ],
+        
           back_urls: {
             success: "https://ingressoz.vercel.app/meus-pedidos",
             failure: "https://ingressoz.vercel.app/checkout",
